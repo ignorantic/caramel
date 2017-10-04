@@ -1,0 +1,18 @@
+@mixin form {
+  .form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 80px;
+  }
+
+  .form__input {
+    width: 215px;
+    height: 34px;
+    margin-bottom: 10px;
+  }
+
+  .form__button {
+    width: 75px;
+  }
+}

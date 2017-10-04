@@ -1,0 +1,10 @@
+.section_floor {
+  height: 76px;
+  background: url("../img/spiral.png") repeat, linear-gradient($clr-alt-face-back, $clr-face-back);
+}
+
+.floor {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient($clr-alt-face-back, transparent);
+}

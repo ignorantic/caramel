@@ -1,0 +1,15 @@
+@import "../sass/modules/caramel";
+@import "../sass/modules/utils";
+@import "../sass/modules/text";
+@import "../sass/modules/slider";
+@import "../sass/modules/decoration";
+
+@include slider;
+
+@import "../sass/blocks/brands";
+@import "../sass/blocks/services";
+@import "../sass/blocks/hero";
+@import "../sass/blocks/works";
+@import "../sass/blocks/info";
+@import "../sass/blocks/quotes";
+@import "../sass/blocks/floor";

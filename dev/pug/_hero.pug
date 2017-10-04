@@ -1,0 +1,53 @@
+-
+  slides = [
+    {
+      'index': '1',
+      'image': 'slide_1.jpg',
+      'header': 'Microblading бровей',
+      'text': 'К сожалению, далеко не все мы имеем идеальную густоту и форму бровей, а ранние ' +
+      'популярный татуаж, дает просто сплошную линию которую никак не назовешь естественной! ' +
+      'И тем не мение, выход есть!'
+    },
+    {
+      'index': '2',
+      'image': 'slide_2.jpg',
+      'header': 'Японская реконструкция волос',
+      'text': 'Капельно-молекулярный комплекс для восстановления волоса изнутри. Состав ' +
+      'аналогичен элементами волоса. В зависимости от повреждения волос рекомендуемый' +
+      'курс 1-2 процедуры в месяц.'
+    },
+    {
+      'index': '3',
+      'image': 'slide_3.jpg',
+      'header': 'Стрижка горячими ножницами',
+      'text': 'Подвергаясь влиянию окружающей среды концы волос секутся и ломаются, ' +
+      'раздвоенные волоски портят и внешний вид и настроение своим обладательницам. ' +
+      'Лечебная стрижка горячими ножницами  - идеальное решение ' +
+      'этой проблемы!'
+    }
+  ]
+
+#hero.section.section_hero
+  .container-fluid
+    .hero.slider.slider_fluid
+      .slider__slides
+        each item in slides
+          if item.index = 1
+            - activeClassName = 'slider__slide_active'
+          else
+            - activeClassName = ''
+          .slider__slide(class=activeClassName style="background-image: url('./img/" + item.image + "');")
+            .container
+              .slider__info
+                if item.index = 1
+                  h2.slider__header.hero_left_to-animate=item.header
+                  p.slider__text.hero_right_to-animate=item.text
+                else
+                  h2.slider__header.hero_left_to-animate=item.header
+                  p.slider__text.hero_right_to-animate=item.text
+      .slider__btnbox.slider__btnbox_left
+        svg.slider__btn(xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 32")
+          path(d="M 2,16 16,30 17,29 4,16 17,3 16,2 Z")
+      .slider__btnbox.slider__btnbox_right
+        svg.slider__btn(xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 32")
+          path(d="M 19,16 5,30 4,29 17,16 4,3 5,2 Z")

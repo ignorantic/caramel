@@ -1,0 +1,57 @@
+-
+  cards = [
+    {
+      'img': 'card_1.jpg',
+      'header': 'Стрижка',
+      'text': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur, quasi qui quibusdam' +
+      'soluta voluptatum!',
+      'url': '#'
+    },
+    {
+      'img': 'card_2.jpg',
+      'header': 'Окрашевание волос',
+      'text': 'Quasi ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur, quasi qui quibusdam ' +
+      'soluta voluptatum!',
+      'url': '#'
+    },
+    {
+      'img': 'card_3.jpg',
+      'header': 'Маникюр',
+      'text': 'Dolorem dolores quasi qui quibusdam soluta voluptatum! Accusamus alias aliquid, ex natus vero ' +
+      'voluptate voluptates?',
+      'url': '#'
+    },
+    {
+      'img': 'card_4.jpg',
+      'header': 'Педикюр',
+      'text': 'Accusamus alias aliquid, ex natus vero voluptate voluptates? Dolorem dolores quasi qui quibusdam ' +
+      'soluta voluptatum!',
+      'url': '#'
+    }
+  ]
+#services.section.section_gradient.section_services
+  .section__header
+    h3.section__title.services_to-animate Наши услуги
+    p.section__subtitle.services_to-animate.
+      Все проводимые в нашем салоне процедуры выполняются мастерами
+      с большим опытом
+  .container
+    .services
+      .row.row-space-around
+        each item in cards
+          .col.col-xs-6.col-md-3
+            .card.services__card.services_to-animate
+              figure.services__figure
+                img.services__img(src=require('../img/' + item.img))
+              .services__info
+                figure.services__figure
+                  img.services__img.services__blur(src=require('../img/' + item.img))
+                .services__figure.services__mat
+                h4.services__header.services_to-animate=item.header
+                p.services__text=item.text
+                a.button.services__button(href=item.url) Подробнее
+
+    svg.services__svg(xmlns="http://www.w3.org/2000/svg")
+      defs
+        filter#gauss
+          fegaussianblur(stddeviation="3")

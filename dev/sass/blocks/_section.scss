@@ -1,0 +1,18 @@
+.section_gradient {
+  padding-bottom: $section-bottom-pad - 20px;
+  background: $clr-section-back;
+  box-shadow: 0 0 20px $clr-alpha-shadow;
+
+  .section__header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    background: url("../img/spiral.png") repeat, linear-gradient($clr-alt-section-back,
+      $clr-section-back);
+  }
+
+  .section__title {
+    margin-top: 0;
+  }
+}
+

@@ -1,0 +1,29 @@
+.cssanimations {
+  .info_to-animate {
+    opacity: 0;
+  }
+}
+
+.info {
+  margin-top: 20px;
+
+  &__card {
+    margin: 20px auto;
+    @media screen and (min-width: $screen-extra-small) {
+      float: left;
+      width: 230px;
+      margin: 10px 40px 20px auto;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    min-width: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  &__text {
+    @include paragraph;
+  }
+}

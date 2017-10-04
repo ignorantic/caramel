@@ -1,0 +1,113 @@
+.section_hero {
+  background: $clr-alt-face-back;
+}
+
+.cssanimations {
+  .hero_to-animate,
+  .hero_left_to-animate,
+  .hero_right_to-animate {
+    opacity: 0;
+
+    &.js-animated {
+      opacity: 1;
+    }
+  }
+}
+
+.hero {
+  .slider__slide {
+    height: 150px;
+    width: 100%;
+    background-size: cover;
+    background-position-y: 50%;
+    @media screen and (min-width: $screen-extra-small) {
+      height: 220px;
+    }
+    @media screen and (min-width: $screen-small) {
+      height: 300px;
+    }
+    @media screen and (min-width: $screen-medium) {
+      height: 400px;
+    }
+
+    .container {
+      height: 100%;
+      position: relative;
+    }
+  }
+
+  .slider__info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $clr-alpha-back;
+    box-shadow: 0 0 10px $clr-dark-alpha-shadow;
+    border-radius: 5px 5px 0 0;
+    @media screen and (min-width: $screen-medium) {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      box-shadow: none;
+      background: none;
+    }
+  }
+
+  .slider__header,
+  .slider__text {
+    padding: 0 20px;
+    @media screen and (min-width: $screen-medium) {
+      padding: 20px;
+      background-color: $clr-alpha-back;
+      border-radius: 5px;
+      transition: {
+        property: transform;
+        duration: 500ms;
+      };
+      box-shadow: 0 0 10px $clr-dark-alpha-shadow;
+    }
+  }
+
+  .slider__header {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media screen and (min-width: $screen-extra-small) {
+      margin-top: 10px;
+      white-space: normal;
+    }
+    @media screen and (min-width: $screen-small) {
+      font-size: 1.6rem;
+    }
+    @media screen and (min-width: $screen-medium) {
+      font-size: 2rem;
+      line-height: 1.5;
+    }
+  }
+
+  .slider__text {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media screen and (min-width: $screen-extra-small) {
+      margin-top: 10px;
+      white-space: normal;
+    }
+    @media screen and (min-width: $screen-small) {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    @media screen and (min-width: $screen-medium) {
+      min-width: 50%;
+      max-width: 75%;
+    }
+  }
+}
+

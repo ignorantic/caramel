@@ -1,0 +1,20 @@
+-
+  menu = [
+    {'name': 'Главная', 'url': 'index.html'},
+    {'name': 'О нас', 'url': 'about.html'},
+    {'name': 'Услуги', 'url': '#'},
+    {'name': 'Прайс', 'url': '#'},
+    {'name': 'Контакты', 'url': 'contacts.html'}
+  ]
+
+.navbar
+  .navbar__container.container
+    .navbar__logo
+      a.navbar__link(href='index.html') Caramel
+    #menu-btn.navbar__btn
+      i.icon-menu
+
+    ul.menu
+      each item in menu
+        li.menu__item
+          a.button.button_menu(href=item.url)=item.name

@@ -1,0 +1,155 @@
+@mixin slider {
+  .flexbox {
+    .slider__slides {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .slider__indicator {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  .slider {
+    overflow: hidden;
+    position: relative;
+
+    &_fluid {
+      .slider__slide {
+        min-width: 100%;
+      }
+    }
+
+    &:hover {
+      .slider__btn {
+        opacity: 0.1;
+      }
+
+      .slider__btnbox {
+        &:hover {
+          .slider__btn {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  .slider__slide {
+    position: relative;
+    min-width: 100%;
+  }
+
+  .slider__info {
+    z-index: 10;
+  }
+
+  .slider__header {
+    @include heading;
+    color: $clr-light-fore;
+  }
+
+  .slider__text {
+    @include paragraph;
+    color: $clr-light-fore;
+    line-height: 2;
+  }
+
+  .slider__indicator {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 100;
+  }
+
+  .slider__dot {
+    cursor: pointer;
+    height: $size-slider-dot;
+    width: $size-slider-dot;
+    padding: $size-slider-dot;
+    z-index: 110;
+
+    span {
+      display: block;
+      height: $size-slider-dot;
+      width: $size-slider-dot;
+      background: $clr-alpha-fore;
+      box-sizing: border-box;
+      border-radius: $size-slider-dot / 2;
+    }
+
+    &_active {
+      span {
+        background: $clr-btn-fore;
+      }
+    }
+
+    &:hover {
+      span {
+        border: 2px solid $clr-btn-fore;
+      }
+    }
+  }
+
+  .slider__btnbox {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 4%;
+    transition: transform 500ms;
+    z-index: 1000;
+    display: none;
+    @media screen and (min-width: $screen-small) {
+      display: block;
+    }
+
+    &_left {
+      left: 2%;
+      padding-right: 15%;
+      @media screen and (min-width: $screen-small) {
+        padding-right: 5%;
+      }
+
+      &:hover {
+        transform: translateX(-5%);
+      }
+    }
+
+    &_right {
+      right: 2%;
+      padding-left: 15%;
+      @media screen and (min-width: $screen-small) {
+        padding-left: 5%;
+      }
+
+      &:hover {
+        transform: translateX(5%);
+      }
+    }
+  }
+
+  .slider__btn {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 200ms;
+    z-index: 10;
+    stroke: $clr-btn-fore;
+    fill: $clr-btn-fore;
+  }
+
+  .no-js {
+    .slider {
+      .slider__slides {
+        display: block;
+      }
+
+      .slider__slide {
+        display: none;
+      }
+    }
+  }
+}

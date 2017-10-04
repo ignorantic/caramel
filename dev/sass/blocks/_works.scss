@@ -1,0 +1,62 @@
+$works-header: (size: 1.3rem, color: $clr-alt-fore);
+$works-text: (size: 1rem);
+
+.cssanimations {
+  .works_to-animate {
+    opacity: 0;
+  }
+}
+
+.works {
+  &.slider {
+    .container {
+      overflow: hidden;
+    }
+
+    .slider__slides {
+      margin-top: 20px;
+    }
+
+    .slider__slide {
+      position: relative;
+      min-width: 100%;
+      @media screen and (min-width: $screen-extra-small) {
+        min-width: 50%;
+      }
+
+      @media screen and (min-width: $screen-small) {
+        min-width: 33.33333%;
+      }
+
+      @media screen and (min-width: $screen-medium) {
+        min-width: 25%;
+      }
+    }
+
+    .slider__btn {
+      stroke: $clr-link-fore;
+      fill: $clr-link-fore;
+    }
+
+    &_to-animate {
+      opacity: 0;
+    }
+
+    .works__card {
+      margin: 0 auto 40px;
+    }
+
+    .works__figure {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .works__img {
+      height: 100%;
+      min-width: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@mixin grid {
+  $col-width: 100% / $grid-cols-number;
+
+  .container {
+    margin-left: $grid-pad;
+    margin-right: $grid-pad;
+  }
+
+  .container-fluid {
+    width: 100%;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .row-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .row-space-between {
+    justify-content: space-between;
+  }
+
+  .row-space-around {
+    justify-content: space-around;
+  }
+
+  .col {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .col-reverse {
+    flex-direction: column-reverse;
+  }
+
+  @for $i from 1 through $grid-cols-number {
+    .col-#{$i} {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding-right: $grid-pad;
+      padding-left: $grid-pad;
+      flex-basis: $i * $col-width;
+      max-width: $i * $col-width;
+    }
+  }
+
+  @for $i from 1 through $grid-cols-number {
+    .col-offset-#{$i} {
+      margin-left: $i * $col-width;
+    }
+  }
+
+  @for $i from 1 through $grid-cols-number {
+    .col-order-#{$i} {
+      order: $i;
+    }
+  }
+
+  @each $suffix, $width in $screens {
+    @media screen and (min-width: #{$width}px) {
+      .row-space-between-#{$suffix} {
+        justify-content: space-between;
+      }
+
+      .row-space-around-#{$suffix} {
+        justify-content: space-around;
+      }
+
+      @if $width > $grid-container-width {
+        .container {
+          width: $grid-container-width;
+          margin: 0 auto;
+        }
+      }
+
+      @for $i from 1 through $grid-cols-number {
+        .col-#{$suffix}-#{$i} {
+          flex-basis: $i * $col-width;
+          max-width: $i * $col-width;
+        }
+      }
+    }
+
+    @for $i from 1 through $grid-cols-number {
+      .col-#{$suffix}-offset-#{$i} {
+        margin-left: $i * $col-width;
+      }
+    }
+
+    @for $i from 1 through $grid-cols-number {
+      .col-#{$suffix}-order-#{$i} {
+        order: $i;
+      }
+    }
+  }
+}

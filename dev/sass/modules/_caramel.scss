@@ -1,0 +1,109 @@
+$ff-base:                             "Roboto Condensed", sans-serif;
+$ff-header:                           "Montserrat", sans-serif;
+
+$clr-back:                            #f7f7f7;
+$clr-fore:                            #393939;
+
+$clr-light-fore:                      #fff;
+$clr-alt-fore:                        #965d7e;
+
+$clr-face-back:                       #51284f;
+$clr-alfa-face-back: rgba(81, 40, 79, 0.8);
+$clr-alt-face-back:                   #633156;
+$clr-add-back:                        #050505;
+
+$clr-header-fore:                     #9f9f9f;
+$clr-header-back:                     #dedede;
+
+// SECTIONS
+$clr-section-fore:                    #9f9f9f;
+$clr-section-back:                    #f7f7f7;
+$clr-alt-section-back:                #d1d1d1;
+
+// DURATIONS
+$dur-base:                            0.2s;
+
+// LINKS
+$clr-link-fore:                       #6b1e93;
+
+// BUTTONS
+$clr-btn-fore:                        #fff;
+$clr-btn-back:                        #633156;
+$clr-btn-fore-hover:                  lighten($clr-btn-fore, 5%);
+$clr-btn-back-hover:                  lighten($clr-btn-back, 5%);
+$size-btn-fnt:                        1rem;
+$ff-btn:                              $ff-base;
+$ind-btn-pad:                         15px;
+$ind-btn-text-shadow:                 0 0 2px;
+$clr-btn-text-shadow:                 rgba(0, 0, 0, 0.3);
+$clr-btn-text-shadow-hover:           rgba(0, 0, 0, 0.5);
+$ind-btn-box-shadow:                  0 0 25px;
+$ind-btn-box-shadow-hover:            0 0 10px;
+$lng-btn-border-width:                0;
+$lng-btn-border-color:                $clr-btn-back;
+$lng-btn-border-style:                solid;
+$lng-btn-border-radius:               4px;
+
+$clr-alpha-fore:                      rgba(255, 255, 255, 0.5);
+$clr-alpha-shadow:                    rgba(0, 0, 0, 0.15);
+$clr-dark-alpha-shadow:               rgba(0, 0, 0, 0.3);
+
+$clr-text-shadow:                     #f7f7f7;
+
+$clr-alpha-back:                      rgba(85, 85, 85, 0.42);
+$clr-light-alpha-back:                rgba(255, 255, 255, 0.4);
+$clr-add-light-alpha-back:            rgba(255, 255, 255, 0.5);
+$clr-disabled:                        #b9b9b9;
+
+// MENU
+$clr-menu-fore:                       #aaa;
+$clr-menu-active-fore:                #fff;
+$clr-menu-back:                       #51284f;
+
+// NAVIGATION
+$clr-nav-back:                        #51284f;
+
+$clr-success-fore:                    #489c24;
+$clr-success-back:                    #aad7a7;
+$clr-error-fore:                      #d60000;
+$clr-error-clr:                       #ff8484;
+
+// SLIDER
+$size-slider-dot:                     10px;
+
+// SCREEN
+$suffix-nano-small:                   "ns";
+$suffix-extra-small:                  "xs";
+$suffix-small:                        "sm";
+$suffix-medium:                       "md";
+$suffix-large:                        "lg";
+
+$breakpoint-nano-small:               320;
+$breakpoint-extra-small:              576;
+$breakpoint-small:                    768;
+$breakpoint-medium:                   992;
+$breakpoint-large:                    1200;
+
+$screen-nano-small:                   #{$breakpoint-nano-small}px;
+$screen-extra-small:                  #{$breakpoint-extra-small}px;
+$screen-small:                        #{$breakpoint-small}px;
+$screen-medium:                       #{$breakpoint-medium}px;
+$screen-large:                        #{$breakpoint-large}px;
+
+$grid-cols-number:                    12;
+$grid-container-width:                1152px;
+$grid-pad:                            1rem;
+
+$screens: (
+  $suffix-nano-small:                 $breakpoint-nano-small,
+  $suffix-extra-small:                $breakpoint-extra-small,
+  $suffix-small:                      $breakpoint-small,
+  $suffix-medium:                     $breakpoint-medium,
+  $suffix-large:                      $breakpoint-large
+);
+
+$section-bottom-pad:                  80px;
+$menu-breakpoint:                     760px;
+$hero-height:                         30vmax;
+$navbar-height:                       78px;
+$foobar-height:                       380px;

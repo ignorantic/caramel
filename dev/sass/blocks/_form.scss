@@ -1,0 +1,35 @@
+.section_form {
+  background: $clr-light-fore;
+}
+
+.label {
+  opacity: 0;
+  background: $clr-alt-fore;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 4px;
+    left: -10px;
+    top: 4px;
+    border-radius: 1px;
+    background: inherit;
+    padding: 8px;
+    transform: rotate(45deg);
+    z-index: -1;
+  }
+}
+
+.input {
+  &:focus + .label {
+    opacity: 1;
+  }
+}
+
+.input_state_error {
+  & + .label {
+    opacity: 1;
+    background: $clr-error-fore;
+  }
+}

@@ -1,0 +1,33 @@
+html {
+  font-size: 14px;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  @include shadow-large(0, 1px);
+  position: relative;
+  min-height: 100%;
+  margin-top: $navbar-height;
+  @media screen and (min-width: $menu-breakpoint) {
+    margin-bottom: $foobar-height - 1;
+  }
+}
+
+.footer-wrapper {
+  width: 100%;
+  background: url("../img/waves.png") repeat, $clr-add-back;
+  @media screen and (min-width: $menu-breakpoint) {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: $foobar-height;
+    z-index: -1;
+  }
+}

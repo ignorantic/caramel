@@ -1,0 +1,18 @@
+@mixin hidden {
+  position: absolute;
+  z-index: -10000;
+  left: -10000px;
+  top: -10000px;
+}
+
+@mixin center-y {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center-x {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}

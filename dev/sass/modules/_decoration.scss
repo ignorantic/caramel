@@ -1,0 +1,8 @@
+@mixin shadow-large($x: 0, $y: 0) {
+  box-shadow: $x $y 20px $clr-dark-alpha-shadow;
+}
+
+@mixin card-border {
+  border-radius: 4px;
+  box-shadow: 3px 0 20px $clr-alpha-shadow;
+}

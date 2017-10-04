@@ -1,0 +1,29 @@
+.footer {
+  width: 100%;
+  @media screen and (min-width: $menu-breakpoint) {
+    @include center-y;
+  }
+
+  &__column {
+    padding: 20px 30px;
+  }
+
+  &__header {
+    @include heading;
+    margin-bottom: 25px;
+    color: $clr-light-fore;
+  }
+
+  &__text {
+    @include paragraph;
+    color: $clr-light-fore;
+  }
+
+  &__span {
+    color: $clr-alt-fore;
+  }
+
+  &__social {
+    margin-top: 20px;
+  }
+}

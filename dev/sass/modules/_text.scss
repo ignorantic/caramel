@@ -1,0 +1,19 @@
+@mixin heading {
+  font: {
+    family: $ff-header;
+    weight: 600;
+    size: 2rem;
+};
+  color: $clr-header-fore;
+  line-height: 1.5;
+}
+
+@mixin paragraph {
+  font: {
+    family: $ff-base;
+    weight: 500;
+    size: 1rem;
+};
+  color: $clr-fore;
+  line-height: 1.5;
+}

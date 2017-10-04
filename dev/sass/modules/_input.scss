@@ -1,0 +1,97 @@
+@mixin button {
+  .button {
+    display: block;
+    padding: $ind-btn-pad;
+
+    border: {
+      width: $lng-btn-border-width;
+      color: $lng-btn-border-color;
+      style: $lng-btn-border-style;
+      radius: $lng-btn-border-radius;
+    }
+
+    text-align: center;
+    text-decoration: none;
+    font-family: $ff-base;
+    font-size: $size-btn-fnt;
+    text-shadow: $ind-btn-text-shadow $clr-btn-back;
+    color: $clr-btn-fore;
+    background: $clr-btn-back;
+    box-shadow: $ind-btn-box-shadow $clr-btn-text-shadow;
+    outline: none;
+
+    transition: {
+      property: background, color, box-shadow;
+      duration: $dur-base;
+    }
+
+    &:hover {
+      background: $clr-btn-back-hover;
+      color: $clr-btn-fore-hover;
+      box-shadow: $ind-btn-box-shadow-hover $clr-btn-text-shadow-hover;
+    }
+  }
+}
+
+@mixin input {
+  .input {
+    @include paragraph;
+    outline: none;
+    border: 1px solid $clr-face-back;
+    border-radius: 1px;
+    padding: 0 10px;
+    background: $clr-back;
+
+    &::placeholder {
+      @include paragraph;
+      vertical-align: middle;
+      background: inherit;
+    }
+
+    @media screen and (max-width: 840px) {
+      width: calc(100% - 160px);
+    }
+  }
+
+  .input_type_textarea {
+    overflow: auto;
+    resize: none;
+    height: auto;
+    width: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+
+    &::placeholder {
+      line-height: 22px;
+    }
+  }
+
+  .input_state_error {
+    border-color: $clr-error-fore;
+    color: $clr-error-fore;
+    font-weight: 700;
+
+    &::placeholder {
+      color: $clr-error-fore;
+    }
+  }
+}
+
+@mixin label {
+  .label {
+    @include paragraph;
+    position: relative;
+    border-radius: 1px;
+    padding: 10px 8px 6px;
+    margin-left: 25px;
+    background: $clr-back;
+    z-index: 1;
+  }
+}
+
+@mixin link {
+  .link {
+    text-decoration: none;
+    color: $clr-link-fore;
+  }
+}

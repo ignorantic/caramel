@@ -1,0 +1,15 @@
+.icon {
+  display: inline-block;
+}
+
+.icon-facebook {
+  @include sprite($facebook);
+}
+
+.icon-mail {
+  @include sprite($mail);
+}
+
+.icon-vimeo {
+  @include sprite($vk);
+}

@@ -1,0 +1,73 @@
+-
+  quotes = [
+    {
+      'index': '0',
+      'image': 'img/work_4.jpg',
+      'header': 'Check out my latest portfolio items',
+      'text': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur dolorem ea, eius' +
+      'evenietfacere laborum molestiae nesciunt non, placeat porro quasi qui quibusdam soluta voluptatum!' +
+      'Accusamus alias aliquid commodi dignissimos dolorem dolores dolorum eos eum, ex natus omnis optio quia' +
+      'repellat reprehenderit sed suscipit tenetur totam vero voluptate voluptates?'
+    },
+    {
+      'index': '1',
+      'image': 'img/work_5.jpg',
+      'header': 'Offer top notch quality  work & services',
+      'text': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur dolorem ea, eius' +
+      'evenietfacere laborum molestiae nesciunt non, placeat porro quasi qui quibusdam soluta voluptatum!' +
+      'Accusamus alias aliquid commodi dignissimos dolorem dolores dolorum eos eum, ex natus omnis optio quia' +
+      'repellat reprehenderit sed suscipit tenetur totam vero voluptate voluptates?'
+    },
+    {
+      'index': '2',
+      'image': 'img/work_6.jpg',
+      'header': 'Follow me on twitter, facebook & pinterest',
+      'text': 'Aliquid consequatur dolorem ea, eius' +
+      'evenietfacere laborum molestiae nesciunt non, placeat porro quasi qui quibusdam soluta voluptatum!' +
+      'Accusamus alias aliquid commodi dignissimos dolorem dolores dolorum eos eum, ex natus omnis optio quia' +
+      'repellat reprehenderit sed suscipit tenetur totam vero voluptate voluptates? Lorem ipsum dolor sit amet,' +
+      'consectetur adipisicing elit.'
+    },
+    {
+      'index': '3',
+      'image': 'img/work_7.jpg',
+      'header': 'Follow me on twitter, facebook & pinterest',
+      'text': 'Aliquid consequatur, consectetur adipisicing elit. Aliquid consequatur dolorem ea, eius' +
+      'evenietfacere laborum molestiae nesciunt non, placeat porro quasi qui quibusdam soluta voluptatum!' +
+      'Accusamus alias aliquid commodi dignissimos dolorem dolores dolorum eos eum, ex natus omnis optio quia' +
+      'repellat reprehenderit sed suscipit tenetur totam vero voluptate voluptates?'
+    },
+    {
+      'index': '4',
+      'image': 'img/work_8.jpg',
+      'header': 'Follow me on twitter, facebook & pinterest',
+      'text': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur dolorem ea, eius' +
+      'evenietfacere laborum molestiae nesciunt non, placeat porro quasi qui quibusdam soluta voluptatum!' +
+      'Accusamus alias aliquid commodi dignissimos dolorem dolores dolorum eos eum, ex natus omnis optio quia' +
+      'repellat reprehenderit sed suscipit tenetur totam vero voluptate voluptates?'
+    }
+  ]
+
+#quotes.section.section_quotes
+  .container
+    .quotes.quotes_to-animate
+      .slider
+        .slider__slides.slider__slides_amimate
+          each item in quotes
+            .slider__slide
+              figure.slider__figure
+                .slider__picture
+                  img.slider__img(src=item.image, alt='slide')
+                figcaption.slider__info
+                  h2.slider__header=item.header
+                  p.slider__text=item.text
+        .slider__indicator
+          each item in quotes
+            .slider__dot(data-index=item.index)
+              span(data-index=item.index)
+        .slider__btnbox.slider__btnbox_left
+          svg.slider__btn(xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 32")
+            path(d="M 2,16 16,30 17,29 4,16 17,3 16,2 Z")
+        .slider__btnbox.slider__btnbox_right
+          svg.slider__btn(xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 32")
+            path(d="M 19,16 5,30 4,29 17,16 4,3 5,2 Z")

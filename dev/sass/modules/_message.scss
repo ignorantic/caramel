@@ -1,0 +1,31 @@
+@mixin message {
+  .message {
+    width: 215px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 1px;
+    @media screen and (max-width: 840px) {
+      width: calc(100% - 160px);
+    }
+  }
+
+  .message_none {
+    display: none;
+  }
+
+  .message_type_success {
+    @include paragraph;
+    background: $clr-success-back;
+    border: 1px solid $clr-success-fore;
+    color: $clr-success-fore;
+    font-weight: 600;
+  }
+
+  .message_type_error {
+    @include paragraph;
+    background: $clr-error-clr;
+    border: 1px solid $clr-error-fore;
+    color: $clr-error-fore;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,29 @@
+-
+  works = [
+    'work_1.jpg', 'work_2.jpg', 'work_3.jpg', 'work_4.jpg', 'work_5.jpg',
+    'work_6.jpg', 'work_7.jpg', 'work_8.jpg', 'work_9.jpg', 'work_10.jpg'
+  ]
+
+  title = 'Наши работы'
+  subtitle = 'Все проводимые в нашем салоне процедуры выполняются мастерами с большим опытом'
+
+#works.section.section_gradient.section_works
+  .section__header
+    .container
+      h3.section__title.works_to-animate=title
+      p.section__subtitle.works_to-animate=subtitle
+  .container-fluid
+    .works.slider.slider_fluid
+      .container
+        .slider__slides
+          each item in works
+            .slider__slide
+              .card.works__card.works_to-animate
+                figure.works__figure
+                  img.works__img(src=require('../img/' + item))
+      .slider__btnbox.slider__btnbox_left
+        svg.slider__btn(xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 32")
+          path(d="M 2,16 16,30 17,29 4,16 17,3 16,2 Z")
+      .slider__btnbox.slider__btnbox_right
+        svg.slider__btn(xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 32")
+          path(d="M 19,16 5,30 4,29 17,16 4,3 5,2 Z")

@@ -1,0 +1,13 @@
+doctype html
+html.no-js(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name = "viewport" content = "width=device-width, initial-scale=1")
+    link(href="/img/favicon.png" rel="shortcut icon")
+    title Caramel
+  body
+    include ../pug/_navbar
+    .page-wrapper
+      block content
+    .footer-wrapper
+      include ../pug/_footer

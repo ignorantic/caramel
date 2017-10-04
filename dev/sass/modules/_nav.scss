@@ -1,0 +1,140 @@
+@mixin menu {
+  .menu {
+    display: flex;
+    position: absolute;
+    top: $navbar-height;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    transition-duration: $dur-base / 2;
+    transition-property: height;
+
+    &__item {
+      opacity: 0;
+      list-style: none;
+      transition-duration: $dur-base;
+      transition-property: opacity;
+
+      a {
+        @include heading;
+        font-size: 1.4rem;
+        color: $clr-menu-fore;
+        text-decoration: none;
+        text-align: left;
+        padding-left: 40px;
+
+        &:hover {
+          color: $clr-menu-active-fore;
+        }
+      }
+
+      &__item_active {
+        a {
+          color: $clr-menu-active-fore;
+
+          &:hover {
+            color: $clr-menu-active-fore;
+          }
+        }
+      }
+    }
+
+    &__item_active {
+      a {
+        color: $clr-menu-active-fore;
+
+        &:hover {
+          color: $clr-menu-active-fore;
+        }
+      }
+    }
+
+    &_dropped {
+      overflow: visible;
+      height: 250px;
+
+      .menu__item {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media screen and (min-width: $menu-breakpoint) {
+    .menu {
+      flex-direction: row;
+      justify-content: flex-end;
+      position: static;
+      height: $navbar-height;
+      overflow: visible;
+      background: $clr-menu-back;
+      align-items: center;
+
+      &__item {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@mixin navbar {
+  .navbar {
+    @include shadow-large(0, 5px);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: $navbar-height;
+    z-index: 100;
+    background: $clr-nav-back;
+
+    &_fixed {
+      top: -$navbar-height;
+      position: fixed;
+      box-shadow: none;
+      transition: {
+        property: transform, box-shadow, position;
+        duration: 0.5s;
+      }
+    }
+
+    &_dropped {
+      @include shadow-large(0, 1px);
+      transform: translateY(100%);
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__link {
+      @include heading;
+      font-size: 2.2rem;
+      color: $clr-header-fore;
+      text-decoration: none;
+      line-height: $navbar-height;
+      text-align: center;
+    }
+
+    &__btn {
+      cursor: pointer;
+      right: 0;
+      top: 10px;
+      font-size: 28px;
+      line-height: $navbar-height;
+      z-index: 100;
+      color: $clr-back;
+      transition: color 500ms;
+      @media screen and (min-width: $menu-breakpoint) {
+        display: none;
+      }
+
+      &:hover {
+        color: $clr-alt-fore;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    // Exception for karma-html2js-preprocessor
+    "no-underscore-dangle": [2, { "allow": ["__html__"]}]
+  }
+}

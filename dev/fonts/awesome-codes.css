@@ -1,0 +1,22 @@
+
+.icon-user:before { content: '\77'; } /* 'w' */
+.icon-left-open:before { content: '\e800'; } /* '' */
+.icon-ok:before { content: '\e801'; } /* '' */
+.icon-right-open:before { content: '\e802'; } /* '' */
+.icon-cog:before { content: '\e803'; } /* '' */
+.icon-play:before { content: '\e804'; } /* '' */
+.icon-link:before { content: '\e805'; } /* '' */
+.icon-doc:before { content: '\e806'; } /* '' */
+.icon-picture:before { content: '\e807'; } /* '' */
+.icon-docs:before { content: '\f0c5'; } /* '' */
+.icon-menu:before { content: '\f0c9'; } /* '' */
+.icon-doc-text:before { content: '\f0f6'; } /* '' */
+.icon-quote-left:before { content: '\f10d'; } /* '' */
+.icon-quote-right:before { content: '\f10e'; } /* '' */
+.icon-rss-squared:before { content: '\f143'; } /* '' */
+.icon-doc-inv:before { content: '\f15b'; } /* '' */
+.icon-doc-text-inv:before { content: '\f15c'; } /* '' */
+.icon-vimeo-squared:before { content: '\f194'; } /* '' */
+.icon-mail-squared:before { content: '\f199'; } /* '' */
+.icon-twitter-squared:before { content: '\f304'; } /* '' */
+.icon-facebook-squared:before { content: '\f308'; } /* '' */

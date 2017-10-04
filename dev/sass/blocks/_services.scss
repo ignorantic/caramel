@@ -1,0 +1,101 @@
+.cssanimations {
+  .services_to-animate {
+    opacity: 0;
+  }
+}
+
+.services {
+  margin-top: 20px;
+}
+
+.services__card {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto 40px;
+  overflow: hidden;
+
+  &:hover {
+    .services__info {
+      top: 0;
+    }
+
+    .services__text {
+      opacity: 1;
+    }
+
+    .services__link {
+      opacity: 1;
+    }
+  }
+}
+
+.services__figure {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.services__img {
+  vertical-align: bottom;
+  height: 100%;
+  min-width: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
+.services__info {
+  position: absolute;
+  top: 75%;
+  left: 0;
+  bottom: 0;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.4s;
+  box-shadow: 0 0 20px $clr-alpha-shadow;
+  overflow: hidden;
+}
+
+.services__header {
+  @include heading;
+  font-size: 1.3rem;
+  color: $clr-alt-fore;
+  text-shadow: 0 0 10px $clr-text-shadow;
+  text-align: center;
+  margin: auto;
+}
+
+.services__text {
+  @include paragraph;
+  text-shadow: 0 0 5px $clr-text-shadow;
+  margin: auto;
+}
+
+.services__header,
+.services__text,
+.services__button {
+  position: relative;
+  margin: 20px;
+  z-index: 5;
+}
+
+.services__text,
+.services__button {
+  margin-top: 0;
+}
+
+.services__blur {
+  z-index: 1;
+  filter: url("#gauss");
+}
+
+.services__mat {
+  top: 0;
+  z-index: 2;
+  background: linear-gradient($clr-add-light-alpha-back 0, $clr-light-alpha-back 4px);
+}
+
+.services__svg {
+  @include hidden;
+  max-width: 100%;
+}

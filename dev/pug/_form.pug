@@ -1,0 +1,16 @@
+.section.section_contacts
+  .container
+    .feedback__form
+      #message.feedback__message.message.message_none.message_type_success
+      form#feedback-form.form
+        div
+          input#input-first-name.input.form__input(type="text", placeholder="first name")
+          label.label(for="input-first-name") Your first name
+        div
+          input#input-last-name.input.form__input(type="text", placeholder="last name")
+          label.label(for="input-last-name") Your last name
+        div
+          input#input-email.input.form__input(type="email", placeholder="email address")
+          label.label(for="input-email") Your e-mail
+        textarea#input-body.form__input.input.input_type_textarea(rows=10, placeholder="message")
+        button#submit-btn.button.form__button Submit

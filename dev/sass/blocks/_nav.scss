@@ -1,0 +1,60 @@
+.menu {
+  background: url("../img/spiral.png") repeat 0 18px, $clr-face-back;
+  @media screen and (min-width: $menu-breakpoint) {
+    background: transparent;
+  }
+
+  &__item {
+    .button_menu {
+      padding: 12px;
+      margin: 0 10px;
+      padding-left: 40px;
+      line-height: 1;
+      box-shadow: none;
+      background: transparent;
+      border: 1px solid transparent;
+      transition-duration: $dur-base;
+      transition-property: background, border, color;
+
+      &:hover {
+        background: $clr-alfa-face-back;
+        border: 1px solid $clr-face-back;
+        animation: pulse 2s infinite;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px $clr-alt-fore;
+      }
+
+      50% {
+        box-shadow: $ind-btn-box-shadow $clr-alt-fore;
+      }
+
+      100% {
+        box-shadow: 0 0 10px $clr-alt-fore;
+      }
+    }
+  }
+
+  @media screen and (min-width: $menu-breakpoint) {
+    .button_menu {
+      padding: 12px;
+      margin: 0;
+    }
+  }
+}
+
+.navbar {
+  background: url("../img/spiral.png") repeat, linear-gradient($clr-face-back,
+    $clr-alt-face-back, $clr-face-back);
+
+  &__btn_blink {
+    color: $clr-back;
+
+    &:hover {
+      color: $clr-back;
+    }
+  }
+}

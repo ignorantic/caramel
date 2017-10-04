@@ -1,0 +1,9 @@
+@mixin card {
+  .card {
+    @include card-border;
+    overflow: hidden;
+    @media screen and (max-width: $screen-nano-small) {
+      width: calc(200px);
+    }
+  }
+}
