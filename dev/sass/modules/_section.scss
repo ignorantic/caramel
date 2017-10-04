@@ -1,6 +1,9 @@
 @mixin section {
   .section {
+    background: $clr-section-back;
+
     &__header {
+      background: $clr-section-back;
       text-align: center;
       margin: 0 auto;
       width: 60%;

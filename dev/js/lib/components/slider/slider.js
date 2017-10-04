@@ -1,5 +1,5 @@
 import Component from '../component';
-import ACTIONS from './actions';
+import { prev, next, loop, refresh, clickDot, touch, drag, untouch, update } from './actions';
 import CONSTS from './consts';
 import on from '../../events/on';
 import reducer from './reducer';
@@ -97,7 +97,7 @@ export default class Slider extends Component {
         if (state.activeSlide > state.count + state.firstSlide
           || state.activeSlide < state.firstSlide) {
           const currentOffset = utils.getOffset(this.slides);
-          this.store.dispatch(ACTIONS.loop(currentOffset));
+          this.store.dispatch(loop(currentOffset));
         } else {
           this.render(state);
         }
@@ -107,7 +107,7 @@ export default class Slider extends Component {
         break;
       case CONSTS.JUMPING:
         this.render(state);
-        this.store.dispatch(ACTIONS.refresh());
+        this.store.dispatch(refresh());
         break;
       default:
         break;
@@ -132,9 +132,9 @@ export default class Slider extends Component {
             : 2 * state.currentTransition;
         }
         targetOffset = state.slideWidth * state.activeSlide;
-        setTimeout(requestAnimationFrame(() => {
+        setTimeout(() => {
           utils.setTranslate(this.slides, duration, targetOffset);
-        }), 10);
+        }, 50);
         this.setActiveSlide(state);
         if (state.dots === true) {
           this.setDots(state);
@@ -142,7 +142,7 @@ export default class Slider extends Component {
         break;
       case CONSTS.DRAGGING:
         utils.setCursor(this.slides, 'move');
-        requestAnimationFrame(() => utils.setTranslate(this.slides, 0, state.currentOffset));
+        utils.setTranslate(this.slides, 0, state.currentOffset);
         break;
       default:
         utils.setTranslate(this.slides, 0, state.currentOffset);
@@ -216,7 +216,7 @@ export default class Slider extends Component {
   onClickDot(e) {
     e.preventDefault();
     const index = +e.target.dataset.index;
-    this.store.dispatch(ACTIONS.clickDot(index));
+    this.store.dispatch(clickDot(index));
   }
 
   onClickSlides(e) {
@@ -230,19 +230,19 @@ export default class Slider extends Component {
     const slideWidth = utils.getSlideWidth(this.slide, this.slides);
     const slidesWidthPx = utils.getSlidesWidthPx(this.slides);
     const maxOffset = utils.getMaxOffset(this.slide, this.slides, state.count);
-    this.store.dispatch(ACTIONS.update(numCols, slideWidth, slidesWidthPx, maxOffset));
+    this.store.dispatch(update(numCols, slideWidth, slidesWidthPx, maxOffset));
   }
 
   onClickLeftBtn(e) {
     e.preventDefault();
     this.clearTimer();
-    this.store.dispatch(ACTIONS.prev());
+    this.store.dispatch(prev());
   }
 
   onClickRightBtn(e) {
     e.preventDefault();
     this.clearTimer();
-    this.store.dispatch(ACTIONS.next());
+    this.store.dispatch(next());
   }
 
   onMouseDownSlides(e) {
@@ -250,14 +250,14 @@ export default class Slider extends Component {
     const touchX = e.screenX;
     this.clearTimer();
     const currentOffset = utils.getOffset(this.slides);
-    this.store.dispatch(ACTIONS.touch(touchX, currentOffset));
+    this.store.dispatch(touch(touchX, currentOffset));
   }
 
   onMouseUpSlides() {
     const state = this.store.getState();
     if (state.status === CONSTS.DRAGGING) {
       const currentOffset = utils.getOffset(this.slides);
-      this.store.dispatch(ACTIONS.untouch(currentOffset));
+      this.store.dispatch(untouch(currentOffset));
     }
   }
 
@@ -265,7 +265,7 @@ export default class Slider extends Component {
     const state = this.store.getState();
     if (state.status === CONSTS.DRAGGING && e.buttons === 1) {
       const touchX = e.screenX;
-      this.store.dispatch(ACTIONS.drag(touchX));
+      this.store.dispatch(drag(touchX));
     }
   }
 
@@ -273,20 +273,20 @@ export default class Slider extends Component {
     const touchX = e.targetTouches[0].pageX;
     this.clearTimer();
     const currentOffset = utils.getOffset(this.slides);
-    this.store.dispatch(ACTIONS.touch(touchX, currentOffset));
+    this.store.dispatch(touch(touchX, currentOffset));
   }
 
   onTouchEndSlides() {
     const state = this.store.getState();
     if (state.status === CONSTS.DRAGGING) {
       const currentOffset = utils.getOffset(this.slides);
-      this.store.dispatch(ACTIONS.untouch(currentOffset));
+      this.store.dispatch(untouch(currentOffset));
     }
   }
 
   onTouchMoveSlides(e) {
     const touchX = e.targetTouches[0].pageX;
-    this.store.dispatch(ACTIONS.drag(touchX));
+    this.store.dispatch(drag(touchX));
   }
 
   /**
@@ -295,7 +295,7 @@ export default class Slider extends Component {
   setTimer() {
     this.timer = setInterval(
       () => {
-        this.store.dispatch(ACTIONS.next());
+        this.store.dispatch(next());
       },
       this.store.getState().interval,
     );

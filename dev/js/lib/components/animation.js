@@ -30,11 +30,8 @@ export function animate(conf) {
 
   getAll(document, config.selector).forEach((item) => {
     setTimeout(() => {
-      function play() {
-        addClass(item, conf.func);
-        addClass(item, animated);
-      }
-      requestAnimationFrame(play);
+      addClass(item, conf.func);
+      addClass(item, animated);
     },
     config.delay + (config.interval * counter));
     counter += 1;
@@ -74,7 +71,7 @@ export function scrollParallax(conf) {
           / height(document)) - (item.value / 2));
         const nodeList = getAll(document, item.selector);
         nodeList.forEach((node) => {
-          requestAnimationFrame(() => style(node, 'backgroundPositionY', `${yOffset}%`));
+          style(node, 'backgroundPositionY', `${yOffset}%`);
         });
       },
     }, this);

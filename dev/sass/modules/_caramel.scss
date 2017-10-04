@@ -18,7 +18,7 @@ $clr-header-back:                     #dedede;
 // SECTIONS
 $clr-section-fore:                    #9f9f9f;
 $clr-section-back:                    #f7f7f7;
-$clr-alt-section-back:                #d1d1d1;
+$clr-alt-section-back:                #bbb;
 
 // DURATIONS
 $dur-base:                            0.2s;
@@ -43,6 +43,12 @@ $lng-btn-border-width:                0;
 $lng-btn-border-color:                $clr-btn-back;
 $lng-btn-border-style:                solid;
 $lng-btn-border-radius:               4px;
+
+//INPUTS
+$clr-input-fore:                      #3e3e3e;
+$clr-input-back:                      #f7f7f7;
+$clr-input-ph-fore:                   #9e9e9e;
+
 
 $clr-alpha-fore:                      rgba(255, 255, 255, 0.5);
 $clr-alpha-shadow:                    rgba(0, 0, 0, 0.15);

@@ -2,42 +2,42 @@ import ACTIONS from './actions';
 
 export default function reducer(state, action) {
   switch (action.type) {
-    case ACTIONS.TYPES.TOGGLE_MENU:
+    case ACTIONS.TOGGLE_MENU:
       return {
         ...state,
         menu: {
           dropped: !state.menu.dropped,
         },
       };
-    case ACTIONS.TYPES.UNDROP_MENU:
+    case ACTIONS.UNDROP_MENU:
       return {
         ...state,
         menu: {
           dropped: false,
         },
       };
-    case ACTIONS.TYPES.FIX_NAVBAR:
+    case ACTIONS.FIX_NAVBAR:
       return {
         ...state,
         navbar: {
           fixed: true,
         },
       };
-    case ACTIONS.TYPES.UNFIX_NAVBAR:
+    case ACTIONS.UNFIX_NAVBAR:
       return {
         ...state,
         navbar: {
           fixed: false,
         },
       };
-    case ACTIONS.TYPES.DROP_NAVBAR:
+    case ACTIONS.DROP_NAVBAR:
       return {
         ...state,
         navbar: {
           dropped: true,
         },
       };
-    case ACTIONS.TYPES.UNDROP_NAVBAR:
+    case ACTIONS.UNDROP_NAVBAR:
       return {
         ...state,
         navbar: {

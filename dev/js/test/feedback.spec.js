@@ -1,6 +1,6 @@
 import { describe, it, beforeEach } from 'mocha';
 import { assert } from 'chai';
-import FeedbackForm from '../lib/components/feedback';
+import FeedbackForm from '../lib/components/feedback/feedback';
 
 describe('Feedback form', () => {
   describe('functions', () => {

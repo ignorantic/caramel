@@ -11,7 +11,6 @@ const production = require('./webpack/production');
 const common = {
   entry: {
     index: path.join(__dirname, 'dev/pages/index.js'),
-    about: path.join(__dirname, 'dev/pages/about.js'),
     contacts: path.join(__dirname, 'dev/pages/contacts.js'),
   },
 
@@ -108,12 +107,6 @@ const common = {
       filename: 'index.html',
       chunks: ['common', 'index'],
       template: 'dev/pages/index.pug',
-    }),
-
-    new HtmlWebpackPlugin({
-      filename: 'about.html',
-      chunks: ['common', 'about'],
-      template: 'dev/pages/about.pug',
     }),
 
     new HtmlWebpackPlugin({

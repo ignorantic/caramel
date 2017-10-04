@@ -13,7 +13,7 @@
     <div class="navbar__btn" id="menu-btn"><i class="icon-menu"></i></div>
     <ul class="menu">
       <li class="menu__item"><a class="button button_menu" href="index.html">Главная</a></li>
-      <li class="menu__item"><a class="button button_menu" href="about.html">О нас</a></li>
+      <li class="menu__item"><a class="button button_menu" href="#">О нас</a></li>
       <li class="menu__item"><a class="button button_menu" href="#">Услуги</a></li>
       <li class="menu__item"><a class="button button_menu" href="#">Прайс</a></li>
       <li class="menu__item"><a class="button button_menu" href="contacts.html">Контакты</a></li>
@@ -25,35 +25,38 @@
         <div class="container-fluid">
           <div class="map" id="map"></div>
         </div>
-        <div class="section section_form" id="breakpoint">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6"></div>
-              <div class="col-md-6">
-<div class="section section_contacts">
-  <div class="container">
-    <div class="feedback__form">
-      <div class="feedback__message message message_none message_type_success" id="message"></div>
-      <form class="form" id="feedback-form">
-        <div>
-          <input class="input form__input" id="input-first-name" type="text" placeholder="first name">
-          <label class="label" for="input-first-name">Your first name</label>
+      </div>
+      <div class="section section_gradient" id="breakpoint">
+        <div class="section__header">
+          <h3 class="section__title section__title_contact services_to-animate">Обратная связь</h3>
         </div>
-        <div>
-          <input class="input form__input" id="input-last-name" type="text" placeholder="last name">
-          <label class="label" for="input-last-name">Your last name</label>
-        </div>
-        <div>
-          <input class="input form__input" id="input-email" type="email" placeholder="email address">
-          <label class="label" for="input-email">Your e-mail</label>
-        </div>
-        <textarea class="form__input input input_type_textarea" id="input-body" rows="10" placeholder="message"></textarea>
-        <button class="button form__button" id="submit-btn">Submit</button>
-      </form>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-4">
+              <p class="text_contact">г. Мариуполь</p>
+              <p class="text_contact">бул. Меотиды, 15/20</p>
+              <p class="text_contact">тел. +380 (629) 49-36-53</p>
+            </div>
+            <div class="col-12 col-sm-8">
+<div class="feedback__form">
+  <div class="feedback__message message message_none message_type_success" id="message"></div>
+  <form class="form" id="feedback-form">
+    <div class="form__feild">
+      <input class="input form__input" id="input-first-name" type="text" placeholder="first name">
+      <label class="label" for="input-first-name"></label>
     </div>
-  </div>
+    <div class="form__feild">
+      <input class="input form__input" id="input-last-name" type="text" placeholder="last name">
+      <label class="label" for="input-last-name"></label>
+    </div>
+    <div class="form__feild">
+      <input class="input form__input" id="input-email" type="email" placeholder="email address">
+      <label class="label" for="input-email"></label>
+    </div>
+    <textarea class="form__input input input_type_textarea" id="input-body" rows="16" placeholder="message"></textarea>
+    <button class="button form__button" id="submit-btn">Submit</button>
+  </form>
 </div>
-              </div>
             </div>
           </div>
         </div>

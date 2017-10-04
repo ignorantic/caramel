@@ -8,7 +8,9 @@
 @include label;
 @include input;
 @include form;
+@include message;
 
 @import "../sass/blocks/map";
 @import "../sass/blocks/form";
+@import "../sass/blocks/contacts";
 

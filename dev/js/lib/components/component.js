@@ -12,6 +12,7 @@ export default class Component {
       });
     }
   }
+
   /**
    * Create store of component
    * @param {function} reducer

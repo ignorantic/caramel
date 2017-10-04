@@ -36,14 +36,16 @@
 @mixin input {
   .input {
     @include paragraph;
+    color: $clr-input-fore;
     outline: none;
     border: 1px solid $clr-face-back;
     border-radius: 1px;
     padding: 0 10px;
-    background: $clr-back;
+    background: $clr-input-back;
 
     &::placeholder {
       @include paragraph;
+      color: $clr-input-ph-fore;
       vertical-align: middle;
       background: inherit;
     }
@@ -82,7 +84,7 @@
     @include paragraph;
     position: relative;
     border-radius: 1px;
-    padding: 10px 8px 6px;
+    padding: 10px;
     margin-left: 25px;
     background: $clr-back;
     z-index: 1;

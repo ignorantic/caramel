@@ -1,6 +1,6 @@
 import GoogleMapsLoader from 'google-maps';
 import Navigation from '../js/lib/components/navigation/navigation';
-import FeedbackForm from '../js/lib/components/feedback';
+import Feedback from '../js/lib/components/feedback/feedback';
 import './common.scss';
 import './contacts.scss';
 
@@ -9,26 +9,34 @@ const app = {};
 document.addEventListener('DOMContentLoaded', () => {
   app.nav = new Navigation();
 
-  app.feedbackForm = new FeedbackForm({
+  app.feedbackForm = new Feedback({
     form: {
       id: 'feedback-form',
     },
     fields: [{
       id: 'input-first-name',
       type: 'text',
-      error: 'Invalid first name',
+      label: 'Ваше имя',
+      placeholder: 'Ваше имя',
+      error: 'Введите ваше имя',
     }, {
       id: 'input-last-name',
       type: 'text',
-      error: 'Invalid last name',
+      label: 'Ваша фамилия',
+      placeholder: 'Ваша фамилия',
+      error: 'Введите вашу фамилию',
     }, {
       id: 'input-email',
       type: 'email',
-      error: 'Invalid email',
+      label: 'Ваш e-mail',
+      placeholder: 'Ваш e-mail',
+      error: 'Введите ваш e-mail',
     }, {
       id: 'input-body',
       type: 'text',
-      error: 'Invalid message body',
+      label: 'Ваше сообщение',
+      placeholder: 'Ваше сообщение',
+      error: 'Введите ваше сообщение',
     }],
     submit: {
       id: 'submit-btn',
@@ -45,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   GoogleMapsLoader.KEY = 'AIzaSyB0ActUGaLxSQdUaN6RdrNiCEvmMIoDa78';
-  GoogleMapsLoader.load((google) => {
+  app.googleMaps = GoogleMapsLoader.load((google) => {
     let map;
     let marker;
     const caramel = new google.maps.LatLng(47.1046618, 37.6371097);

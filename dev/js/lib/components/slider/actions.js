@@ -1,61 +1,65 @@
 import CONSTS from './consts';
 
-const ACTIONS = {
-  prev() {
-    return {
-      type: CONSTS.PREV,
-    };
-  },
-  next() {
-    return {
-      type: CONSTS.NEXT,
-    };
-  },
-  loop(currentOffset) {
-    return {
-      type: CONSTS.LOOP,
-      currentOffset,
-    };
-  },
-  refresh() {
-    return {
-      type: CONSTS.REFRESH,
-    };
-  },
-  clickDot(index) {
-    return {
-      type: CONSTS.CLICK_DOT,
-      index,
-    };
-  },
-  touch(touchX, currentOffset) {
-    return {
-      type: CONSTS.TOUCH,
-      touchX,
-      currentOffset,
-    };
-  },
-  drag(touchX) {
-    return {
-      type: CONSTS.DRAG,
-      touchX,
-    };
-  },
-  untouch(currentOffset) {
-    return {
-      type: CONSTS.UNTOUCH,
-      currentOffset,
-    };
-  },
-  update(numCols, slideWidth, slidesWidthPx, maxOffset) {
-    return {
-      type: CONSTS.UPDATE,
-      numCols,
-      slideWidth,
-      slidesWidthPx,
-      maxOffset,
-    };
-  },
-};
+export function prev() {
+  return {
+    type: CONSTS.PREV,
+  };
+}
 
-export default ACTIONS;
+export function next() {
+  return {
+    type: CONSTS.NEXT,
+  };
+}
+
+export function loop(currentOffset) {
+  return {
+    type: CONSTS.LOOP,
+    currentOffset,
+  };
+}
+
+export function refresh() {
+  return {
+    type: CONSTS.REFRESH,
+  };
+}
+
+export function clickDot(index) {
+  return {
+    type: CONSTS.CLICK_DOT,
+    index,
+  };
+}
+
+export function touch(touchX, currentOffset) {
+  return {
+    type: CONSTS.TOUCH,
+    touchX,
+    currentOffset,
+  };
+}
+
+export function drag(touchX) {
+  return {
+    type: CONSTS.DRAG,
+    touchX,
+  };
+}
+
+export function untouch(currentOffset) {
+  return {
+    type: CONSTS.UNTOUCH,
+    currentOffset,
+  };
+}
+
+export function update(numCols, slideWidth, slidesWidthPx, maxOffset) {
+  return {
+    type: CONSTS.UPDATE,
+    numCols,
+    slideWidth,
+    slidesWidthPx,
+    maxOffset,
+  };
+}

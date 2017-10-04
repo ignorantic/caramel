@@ -1,18 +1,15 @@
-.section_form {
-  background: $clr-light-fore;
-}
-
 .label {
   opacity: 0;
+  color: $clr-light-fore;
   background: $clr-alt-fore;
 
   &::before {
     content: "";
     position: absolute;
-    height: 4px;
-    width: 4px;
-    left: -10px;
-    top: 4px;
+    height: 10px;
+    width: 10px;
+    left: -12px;
+    top: 5px;
     border-radius: 1px;
     background: inherit;
     padding: 8px;
@@ -32,4 +29,9 @@
     opacity: 1;
     background: $clr-error-fore;
   }
+}
+
+.input_type_textarea {
+  height: 180px;
+  width: 80%;
 }

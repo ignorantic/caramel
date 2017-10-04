@@ -4,9 +4,14 @@ append content
   .section.section_map
     .container-fluid
       #map.map
-    #breakpoint.section.section_form
-      .container
-        .row
-          .col-md-6
-          .col-md-6
-            include ../pug/_form
+  #breakpoint.section.section_gradient
+    .section__header
+      h3.section__title.section__title_contact.services_to-animate Обратная связь
+    .container
+      .row
+        .col-12.col-sm-4
+          p.text_contact г. Мариуполь
+          p.text_contact бул. Меотиды, 15/20
+          p.text_contact тел. +380 (629) 49-36-53
+        .col-12.col-sm-8
+          include ../pug/_form

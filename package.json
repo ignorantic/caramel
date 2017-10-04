@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "mocha": "mocha dev/js/test/mocha/*.js --compilers js:babel-register",
+    "mocha": "mocha dev/js/test/*.spec.js --compilers js:babel-register",
     "sass-lint": "sass-lint -c .sass-lint.yml 'dev/**/*.scss' -v -q",
     "pug-lint": "pug-lint -c .pug-lintrc.json dev",
     "eslint": "eslint dev/lib dev/index dev/components",
@@ -22,6 +22,7 @@
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-array-includes": "^2.0.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -80,7 +81,6 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "google-maps": "^3.2.1",
     "he": "^1.1.1",
-    "lodash": "^4.17.4",
     "modernizr": "^3.5.0",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "validator": "^7.0.0"

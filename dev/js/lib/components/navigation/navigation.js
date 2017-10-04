@@ -1,6 +1,6 @@
 import Component from '../component';
 import ScrollFire from '../scroll-fire';
-import ACTIONS from './actions';
+import { toggleMenu, fixNavbar, undropMenu, undropNavbar, dropNavbar, unfixNavbar } from './actions';
 import reducer from './reducer';
 
 export default class Navigation extends Component {
@@ -11,7 +11,7 @@ export default class Navigation extends Component {
     this.navbar = new Component('navbar', [{
       target: '#menu-btn',
       type: 'click',
-      handler: () => this.store.dispatch(ACTIONS.toggleMenu()),
+      handler: () => this.store.dispatch(toggleMenu()),
     }]);
 
     this.store = this.constructor.createStore(reducer, {
@@ -34,26 +34,26 @@ export default class Navigation extends Component {
       offset: 100,
       direction: 'up',
       handler: () => {
-        this.store.dispatch(ACTIONS.fixNavbar());
+        this.store.dispatch(fixNavbar());
       },
     }, {
       direction: 'up',
       handler: () => {
-        this.store.dispatch(ACTIONS.undropMenu());
-        this.store.dispatch(ACTIONS.undropNavbar());
+        this.store.dispatch(undropMenu());
+        this.store.dispatch(undropNavbar());
       },
     }, {
       direction: 'down',
       handler: () => {
-        this.store.dispatch(ACTIONS.dropNavbar());
+        this.store.dispatch(dropNavbar());
       },
     }, {
       selector: this.breakpoint,
       offset: 100,
       direction: 'down',
       handler: () => {
-        this.store.dispatch(ACTIONS.unfixNavbar());
-        this.store.dispatch(ACTIONS.undropNavbar());
+        this.store.dispatch(unfixNavbar());
+        this.store.dispatch(undropNavbar());
       },
     }]);
   }
