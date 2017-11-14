@@ -36,8 +36,6 @@ window.addEventListener('load', () => {
   if (Modernizr.cssanimations) {
     app.scrollFire = new ScrollFire([{
       selector: '#hero',
-      once: true,
-      ever: false,
       handler: () => {
         animate({
           selector: '.hero_to-animate',
@@ -46,8 +44,6 @@ window.addEventListener('load', () => {
       },
     }, {
       selector: '#hero',
-      once: true,
-      ever: false,
       handler: () => {
         animate({
           selector: '#hero .hero_right_to-animate',
@@ -56,8 +52,6 @@ window.addEventListener('load', () => {
       },
     }, {
       selector: '#hero',
-      once: true,
-      ever: false,
       handler: () => {
         animate({
           selector: '#hero .hero_left_to-animate',
@@ -67,8 +61,6 @@ window.addEventListener('load', () => {
     }, {
       selector: '#brands',
       offset: 20,
-      once: true,
-      ever: false,
       handler: () => {
         animate({
           selector: '.brands_to-animate',
@@ -79,8 +71,6 @@ window.addEventListener('load', () => {
     }, {
       selector: '#services',
       offset: 20,
-      once: true,
-      ever: false,
       handler: () => {
         animate({
           selector: '.services_to-animate',
@@ -91,8 +81,6 @@ window.addEventListener('load', () => {
     }, {
       selector: '#works',
       offset: 20,
-      once: true,
-      ever: false,
       handler: () => {
         animate({
           selector: '.works_to-animate',
@@ -103,8 +91,6 @@ window.addEventListener('load', () => {
     }, {
       selector: '#features',
       offset: 20,
-      once: true,
-      ever: false,
       handler: () => {
         animate({
           selector: '.features_to-animate',
@@ -115,8 +101,6 @@ window.addEventListener('load', () => {
     }, {
       selector: '#info',
       offset: 20,
-      once: true,
-      ever: false,
       handler: () => {
         animate({
           selector: '.info_to-animate',
@@ -127,8 +111,6 @@ window.addEventListener('load', () => {
     }, {
       selector: '#quotes',
       offset: 20,
-      once: true,
-      ever: false,
       handler: () => {
         animate({
           selector: '.quotes_to-animate',
@@ -139,13 +121,13 @@ window.addEventListener('load', () => {
 
     animateOn([{
       event: { '#hero .slider__slides': 'transitionend' },
-      activeSelector: '#hero .slider__slide_active .hero_right_to-animate',
-      selector: '#hero .hero_right_to-animate',
+      selector: '#hero .slider__slide_active .hero_right_to-animate',
+      selectorDisactive: '#hero .slider__slide:not(.slider__slide_active) .hero_right_to-animate',
       func: 'shakeToRight',
     }, {
       event: { '#hero .slider__slides': 'transitionend' },
-      activeSelector: '#hero .slider__slide_active .hero_left_to-animate',
-      selector: '#hero .hero_left_to-animate',
+      selector: '#hero .slider__slide_active .hero_left_to-animate',
+      selectorDisactive: '#hero .slider__slide:not(.slider__slide_active) .hero_left_to-animate',
       func: 'shakeToLeft',
     }]);
 

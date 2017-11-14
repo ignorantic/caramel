@@ -49,7 +49,7 @@ export function animateOn(conf) {
     events.forEach((target) => {
       on(target, {
         [param.event[target]]: () => {
-          getAll(document, param.selector).forEach((node) => {
+          getAll(document, param.selectorDisactive).forEach((node) => {
             removeClass(node, param.func);
           });
           animate(param);

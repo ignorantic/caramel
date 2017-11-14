@@ -10,8 +10,8 @@ export default class ScrollFire {
       const result = {
         offset: 0,
         direction: 'up',
-        once: false,
-        ever: true,
+        once: true,
+        ever: false,
         completed: false,
         ...item,
       };

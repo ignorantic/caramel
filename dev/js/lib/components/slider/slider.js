@@ -32,7 +32,7 @@ export default class Slider extends Component {
       utils.cloneEdgeSlides(this.slide, 2);
     }
 
-    this.store = this.constructor.createStore(reducer, this.init());
+    this.store = this.constructor.createStore(reducer, this.getInitialState());
     this.store.subscribe(() => {
       const state = this.store.getState();
       this.switcher(state);
@@ -56,7 +56,7 @@ export default class Slider extends Component {
    * Initialize state
    * @returns {object} - State object
    */
-  init() {
+  getInitialState() {
     let count;
     let firstSlide;
     const num = utils.getNumSlides(this.slide);
